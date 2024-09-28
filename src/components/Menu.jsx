@@ -105,7 +105,7 @@ const Menu = () => {
           </p>
 
           <div className="pt-10 pb-16">
-            <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
+            <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-20 gap-4">
               {menus.map((item, index) => (
                 <li
                   key={index}
@@ -130,13 +130,13 @@ const Menu = () => {
                     )}
                   </div>
 
-                  <div className="p-4 text-center">
+                  <div className="pt-2 text-center">
                     <h4 className="text-sm min-h-12 md:text-base font-semibold text-stone-900">
                       {item.strMeal}
                     </h4>
                   </div>
-                  <div className="items-center bottom-0 grid grid-cols-3 mb-2">
-                    <div className="flex items-center space-x-3">
+                  <div className="items-center bottom-0 mb-2">
+                    <div className=" items-center grid grid-cols-2 space-x-3">
                       <div className="flex">
                         <FaStar className="text-yellow-700 ml-3" />
                         <FaStar className="text-yellow-700" />
@@ -144,9 +144,10 @@ const Menu = () => {
                         <FaStar className="text-yellow-700" />
                         <FaStarHalfAlt className="text-yellow-700" />
                       </div>
+
                       <button
                         onClick={() => handleNavigate(item)}
-                        className="border mr-2 rounded-full px-6 py-1  border-blue-gray-500 hover:bg-black hover:text-white"
+                        className="border mr-2 rounded-full md:px-4 py-1 border-blue-gray-500 hover:bg-black hover:text-white"
                       >
                         View
                       </button>

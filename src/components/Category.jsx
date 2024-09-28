@@ -29,7 +29,7 @@ const Category = () => {
         {menus.length === 0 ? (
           <p className="text-center text-xl mt-60">Item not found.</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32">
             {menus.map((item, index) => (
               <div
                 key={index}
