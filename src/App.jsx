@@ -9,11 +9,13 @@ import RecipeDetails from "./components/RecipeDetails";
 import Footer from "./components/Footer";
 import Favourites from "./components/Favourites";
 import Category from "./components/Category";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop/>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

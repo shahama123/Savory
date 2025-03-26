@@ -71,7 +71,7 @@ const Menu = () => {
 
   return (
     <>
-      <div className="bg-blue-gray-100 px-10 md:px-16 lg:px-36 xl:px-64 py-1">
+      <div className="bg-blue-gray-100  py-1">
         <div>
           <form className="my-10" onSubmit={handleSearch}>
             <div className="flex justify-center items-center gap-2 py-2 lg:py-0">
@@ -105,7 +105,7 @@ const Menu = () => {
           </p>
 
           <div className="pt-10 pb-16">
-            <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-20 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32">
               {menus.map((item, index) => (
                 <li
                   key={index}
@@ -135,7 +135,7 @@ const Menu = () => {
                       {item.strMeal}
                     </h4>
                   </div>
-                  <div className="items-center bottom-0 mb-2">
+                  <div className="items-center bottom-0 mb-5 mx-5">
                     <div className=" items-center grid grid-cols-2 space-x-3">
                       <div className="flex">
                         <FaStar className="text-yellow-700 ml-3" />
@@ -160,7 +160,7 @@ const Menu = () => {
         </div>
       </div>
 
-      <div className="px-10  md:px-16  lg:px-32 xl:px-60 pt-10 md:pt-20 pb-20  bg-blue-gray-50">
+      <div className="px-10  md:px-16  lg:px-32 xl:px-40 pt-10 md:pt-20 pb-20  bg-blue-gray-50">
         <h1 className="text-stone-900 text-2xl md:text-4xl text-center  font-extrabold mb-4">
           Choose Your Category
         </h1>

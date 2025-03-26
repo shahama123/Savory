@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { IoMdHeart, IoIosHeartEmpty } from "react-icons/io";
+import { useLocation, useNavigate } from "react-router-dom";
+import { IoMdHeart, IoIosHeartEmpty, IoMdArrowRoundBack } from "react-icons/io";
 
 const RecipeDetails = () => {
   const location = useLocation();
   const ingredientsDetails = location.state?.item;
   const [isFavorite, setIsFavorite] = useState(false);
+  const navigate = useNavigate();
+
+  const handleGoBack = () => navigate(-1);
 
   useEffect(() => {
     if (ingredientsDetails) {
@@ -49,17 +52,25 @@ const RecipeDetails = () => {
   }
 
   return (
-    <div className="pt-32 pb-16 bg-blue-gray-50">
+    <div className="pt-28 pb-16 bg-blue-gray-50">
+      <div className="flex item-center justify-start mx-20">
+        <div className="flex gap-1 items-center">
+          <IoMdArrowRoundBack />
+          <button onClick={handleGoBack}>BACK</button>
+        </div>
+      </div>
       <h2 className="text-center font-bold text-4xl mb-10">
         {ingredientsDetails.strMeal}
       </h2>
-      <div className="flex items-center flex-wrap gap-20 justify-center">
-        <img
-          className="rounded-lg w-72"
-          src={ingredientsDetails.strMealThumb}
-          alt={ingredientsDetails.strMeal}
-        />
 
+      <div className="flex items-center flex-wrap gap-20  justify-center">
+        <div className="mx-10 ">
+          <img
+            className="rounded-lg w-72 "
+            src={ingredientsDetails.strMealThumb}
+            alt={ingredientsDetails.strMeal}
+          />
+        </div>
         <div>
           <h2 className="text-2xl underline font-semibold">Ingredients</h2>
           <ul className="mt-3 list-item list-disc">
@@ -69,7 +80,7 @@ const RecipeDetails = () => {
           </ul>
         </div>
       </div>
-      <div className="px-20 py-10">
+      <div className="lg:px-32 px-10 py-10">
         <h2 className="text-2xl underline font-semibold">Preparations</h2>
         <p className="mt-3">{ingredientsDetails.strInstructions}</p>
       </div>
